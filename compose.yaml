@@ -1,0 +1,33 @@
+services:
+  db:
+    image: postgres:16.9-alpine
+    environment:
+      POSTGRES_DB: inspection
+      POSTGRES_USER: inspector
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set a private POSTGRES_PASSWORD in .env}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: [CMD-SHELL, 'pg_isready -U inspector -d inspection']
+      interval: 3s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+  app:
+    build: .
+    ports:
+      - '127.0.0.1:8000:8000'
+    environment:
+      DATABASE_URL: postgresql+psycopg://inspector:${POSTGRES_PASSWORD}@db:5432/inspection
+      STORAGE_DIR: /app/data/private
+      MODEL_DIR: /app/models/bottle-v1
+      COOKIE_SECURE: 'false'
+    depends_on:
+      db:
+        condition: service_healthy
+    volumes:
+      - private_data:/app/data
+    restart: unless-stopped
+volumes:
+  postgres_data:
+  private_data:

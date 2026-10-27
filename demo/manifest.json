@@ -1,0 +1,22 @@
+[
+  {
+    "source": "test/broken_large/000.png",
+    "sha256": "11a691a06a33dd78c5fcab6a822caa48c0d72f27f660e19f5abd9b5aa392b0eb",
+    "purpose": "demonstration only; excluded from evaluation"
+  },
+  {
+    "source": "test/broken_small/000.png",
+    "sha256": "05b96e1102fba8cc19bf60e17d33a0830247df2bbba56cae3df100336392941e",
+    "purpose": "demonstration only; excluded from evaluation"
+  },
+  {
+    "source": "test/contamination/000.png",
+    "sha256": "fe2e96a8cba624ace02985481197ee8ab112d2a2faa4b79f137ace2c452eb4ea",
+    "purpose": "demonstration only; excluded from evaluation"
+  },
+  {
+    "source": "test/good/000.png",
+    "sha256": "9e7bfe658efe9b6db2607a96405b4ac6880936eaf93b89c85bcd311122ceb57b",
+    "purpose": "demonstration only; excluded from evaluation"
+  }
+]

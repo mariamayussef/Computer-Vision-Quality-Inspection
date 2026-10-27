@@ -1,0 +1,19 @@
+{
+  "requests": 10,
+  "method": "httpx over TCP to localhost:8000, existing authenticated session, 526284-byte demo PNG, unique keys; every request performs inference/storage/DB commits",
+  "hardware": "Apple M3 MacBook Air, 8 cores, 8 GB, CPU only",
+  "milliseconds": [
+    85.85845772176981,
+    37.75816597044468,
+    41.86033271253109,
+    44.747957959771156,
+    42.23458282649517,
+    46.54404195025563,
+    37.91537508368492,
+    43.4394171461463,
+    35.60266690328717,
+    46.60341702401638
+  ],
+  "median_ms": 42.836999986320734,
+  "max_ms": 85.85845772176981
+}
